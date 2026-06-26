@@ -95,7 +95,7 @@ void addStudent()
 	scanf("%d",&marks[totalStudents]);
 	
 	printf("Enter the Name of student\n");
-	scanf("%s", name[totalStudents]);
+	scanf(" %49[^\n]", name[totalStudents]);
 	
 	printf("Enter Age of Student\n");
 	scanf("%d",&age[totalStudents]);
@@ -140,10 +140,16 @@ void searchStudent()
 	{
 		if(searchRoll == roll[i])
 		{
-			printf("roll number: %d\n",roll[i]);
-			printf("Marks: %d\n",marks[i]);
-			printf("Name of Student: %s\n",name[i]);
-			printf("Age of Student: %d\n",age[i]);
+			printf("------------------------------\n");
+			printf("Student Found\n\n");
+			
+			printf("Roll Number : %d\n", roll[i]);
+			printf("Name        : %s\n", name[i]);
+			printf("Age         : %d\n", age[i]);
+			printf("Marks       : %d\n", marks[i]);
+			
+			printf("------------------------------\n");
+			
 			found = 1;
 			break;
 		}
@@ -173,7 +179,7 @@ void updateStudent()
 			printf("Age of Student: %d\n",age[i]);
 			
 			printf("Enter New Name:\n");
-			scanf("%s", name[i]);
+			scanf(" %49[^\n]", name[i]);
 			
 			printf("Enter New Age:\n");
 			scanf("%d", &age[i]);
